@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing-: border-box;
+    -moz-box-sizing-: border-box;
+    -ms-box-sizing-:border-box;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html{
+scroll-behavior: smooth;  
+
+}
+body{
+    height: auto;  
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+button:focus
+{
+    outline: none;
+}
+form{
+    width: 50%;
+    height: auto;
+    font-size: 20px;
+    margin: auto;
+    background-color: #343a40;
+}
+input{
+    width: 100% !important;
+    height: 35px !important;
+    font-size: 25px !important;
+}
+
+form button{
+    width: 20%;
+    height: 37px;
+    padding: 7px;
+    font-size: 13px !important;
+}
+table button{
+    width: 20%;
+    height: 37px;
+    padding: 7px;
+    font-size: 13px !important
+}
