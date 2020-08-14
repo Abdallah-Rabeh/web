@@ -18,7 +18,7 @@ if(localStorage.getItem("students_id")===null){
 }
     myform.addEventListener('submit',function(e){
         e.preventDefault();  
-        if(myform.getAttribute('type-of-form')==('add')){
+        if(myform.getAttribute('type-of-form')=='add'){
             let newstudent ={
                 'id':students_id++,
                 'FirstName':inputs[0].value,
@@ -46,10 +46,10 @@ if(localStorage.getItem("students_id")===null){
                 
             }
         
-        }else if
-        (myform.getAttribute('type-of-form')==('edit')){
+         }else if
+        (myform.getAttribute('type-of-form')=='edit'){
 
-            let id =myform.getAttribute('add-id');
+             let id =myform.getAttribute('add-id');
             let indexofstudents =students.findIndex((student) => {return student.id==id});
             students[indexofstudents]['FirstName'] =inputs[0].value;
             students[indexofstudents]['LastName'] =inputs[1].value;
@@ -67,32 +67,6 @@ if(localStorage.getItem("students_id")===null){
             myBoutton.textContent="Add new students";
              myform.setAttribute('type-of-form','add');
         }
-    let newstudent ={
-        'id':students_id++,
-        'FirstName':inputs[0].value,
-        'LastName':inputs[1].value,
-        'age':inputs[2].value
-
-    }    
-    students.push(newstudent);
-    localStorage.setItem('students',JSON.stringify(students));
-    localStorage.setItem('students_id',JSON.stringify(students_id))
-    tBody.innerHTML+=`
-    <tr>
-    <td>${newstudent.id}</td>
-    <td>${newstudent.FirstName}</td>
-    <td>${newstudent.LastName}</td>
-    <td>${newstudent.age}</td>
-    <td>
-    <button class="btn btn-info" onclick="Editstudents(this)">Edit</button>
-    <button class="btn btn-danger" onclick="Deletestudents(this)">Delete</button>
-    </td>
-    </tr>
-    `;
-    for (let input of inputs) {
-        input.value='';
-        
-    }
 });  
 function getstudents (students){
      tBody.innerHTML= "";
@@ -110,6 +84,8 @@ for ( let student of students) {
     </tr>
     `;
    
+
+
 };
 }
 function Deletestudents(that){
