@@ -15,33 +15,38 @@
     <script src="js/Respond.js"></script>
 </head>
 <body>
-  
-    <form id="StudentForm" class="mt-5" type-of-form="add">
+  <section>
+      <div class="col-lg-12 md-6 xs-6">
+        <form id="StudentForm" class="mt-5" type-of-form="add">
 
-        <div class="form-group p-5 clearfix">
-
-            <div class="input">       
-                <label for="FirstName" class="col-sm-1-12 col-form-label">First Name</label>
-              
-                <input type="text" class="form-control"  name="firstName" id="FirstName" placeholder="" autocomplete="off" required>
+            <div class="form-group p-5 clearfix">
+    
+                <div class="input col-lg-12 md-4 xs-4">       
+                    <label for="FirstName" class="col-sm-1-12 col-form-label">First Name</label>
+                  
+                    <input type="text" class="form-control"  name="firstName" id="FirstName" placeholder="" autocomplete="off" required>
+                </div>
+    
+                <div class="input col-lg-12 md-4 xs-4">
+                    <label for="LastName" class="col-sm-1-12 col-form-label">Last Name</label>        
+                    <input type="text" class="form-control" name="lastName" id="LastName" placeholder="" autocomplete="off" required>
+            
+                </div>
+    
+                <div class="input col-lg-12 md-4 xs-4">
+                    <label for="Age" class="col-sm-1-12 col-form-label">Age</label>
+                    <input type="text" class="form-control" name="age" id="Age" placeholder="" autocomplete="off" required>
+                </div>
+    
+                <button class="btn btn-success float-right mt-3" type="submit">Add New
+                    Student</button>
             </div>
+    
+        </form>
 
-            <div class="input">
-                <label for="LastName" class="col-sm-1-12 col-form-label">Last Name</label>        
-                <input type="text" class="form-control" name="lastName" id="LastName" placeholder="" autocomplete="off" required>
-        
-            </div>
-
-            <div class="input">
-                <label for="Age" class="col-sm-1-12 col-form-label">Age</label>
-                <input type="text" class="form-control" name="age" id="Age" placeholder="" autocomplete="off" required>
-            </div>
-
-            <button class="btn btn-success float-right mt-3" type="submit">Add New
-                Student</button>
-        </div>
-
-    </form>
+      </div>
+  </section>
+    
     <table id="TableStudents" class="table table-striped">
         <thead class="thead-dark">
             <tr>

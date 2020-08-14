@@ -29,9 +29,8 @@ if(localStorage.getItem("students_id")===null){
 
     }    
     students.push(newstudent);
-    localStorage.setItem("students",JSON.stringify(students))
-
-    
+    localStorage.setItem('students',JSON.stringify(students));
+    localStorage.setItem('students_id',JSON.stringify(students_id))
     tBody.innerHTML+=`
     <tr>
     <td>${newstudent.id}</td>
@@ -49,8 +48,6 @@ if(localStorage.getItem("students_id")===null){
         
     }
 });    
-localStorage.setItem("students_id",JSON.stringify(students_id))
-
 function getstudents (students){
 for ( let student of students) {
     tBody.innerHTML+=`
@@ -70,15 +67,24 @@ for ( let student of students) {
 }
 function Deletestudents(that){
     let myStudent= that.parentElement.parentElement;
-    let Studentindex=students.findIndex( (student) =>{return student.id==myStudent.children[0].textcontent});
+    let Studentindex=students.findIndex( (student) =>{return student.id==myStudent.children[0].textContent});
     students.splice(Studentindex, 1);
-    console.log(students.splice(Studentindex, 1));
-    localStorage.setItem("students",JSON.stringify(students));
+    localStorage.setItem('students',JSON.stringify(students));
     myStudent.remove();   
  };
  function Editstudents(that){
-
-
-};
-
-
+    let myStudentElemnt =that.parentElement.parentElement;
+    let myStudent ={
+      'FirstName':myStudentElemnt.children[1].textContent,
+       'LastName':myStudentElemnt.children[2].textContent,
+       'age':myStudentElemnt.children[3].textContent,
+    };
+    let i = 0;
+    for (let key in myStudent){
+        inputs[i++].value=myStudent[key];
+    }
+    let myBoutton=document.querySelector("#StudentForm button[type='submit']")
+    myBoutton.classList.remove('btn-success');
+    myBoutton.classList.add('btn-info');
+    myBoutton.textContent='Edit Student';
+ };
